@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './style.css'
 
 function App() {
+  const calc=()=>{
+    let a=document.getElementById('date').value.split("-");
+    let b=new Date().getFullYear();
+    document.getElementById('age').innerHTML="your age is "+(b-a[0])+" years old.";
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div id='contain'>
+      <h1>Age Calculator</h1>
+      <h4>Enter your date of birth</h4>
+      <input type="date" name="" id="date" /> <br />
+      <button onClick={()=>{calc()}}>calculate age</button>
+      <div id="age"></div>
     </div>
+    </>
   );
 }
 
